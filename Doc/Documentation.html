@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System | MCE</title>
+
+    <style>
+        * {box-sizing:border-box}
+
+        /* Slideshow container */
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: rgb(17, 0, 255);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease-in-out;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgb(0, 0, 0);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f8f406;
+        font-size: 12px;
+        padding: 0px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 14px;
+          padding: 36px 17px;
+          position: absolute;
+          top: 2px;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+/* Slide show style end */
+
+        .navbar{
+            background-color: rgb(3, 18, 150);
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px; 
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .navbar li a:hover{
+            color: rgb(6, 243, 252);
+        }
+
+        .navbar li{
+            padding-top: 3px;
+            margin: 13px 17px;
+            float: left;
+            list-style: none;
+        }
+        /* .search{
+            float:right;
+            color: white;
+            padding: 13px 75px;
+        } */
+        /* .navbar input{
+            border: 2px solid rgb(4, 15, 168);
+            border-radius: 13px;
+            padding: 3px 25px;
+            width: 200px;
+        } */
+    h1{
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 10px;
+        border: 3px solid rgb(250, 1, 229);
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        text-align: center;
+        color:rgb(4, 4, 150);
+        font-size: 2.7rem;
+        font-family:Verdana, Geneva, Tahoma, sans-serif
+    }
+    #paragraph{
+      text-align: justify;
+      margin-top: 10px;
+      font-family: monospace;
+      font-weight: 400;
+      font-size: 19px;
+      margin-bottom: 10px;
+      margin-left: 25px;
+      margin-right: 25px;
+      padding-top: 15px;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+    #parathanks{
+      text-align: justify;
+      margin-top: 10px;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: 500;
+      font-size: 21px;
+      margin-bottom: 10px;
+      margin-left: 25px;
+      margin-right: 25px;
+      padding-top: 15px;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+
+    #headingspan{
+      border: 3px solid rgb(1, 90, 105);
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      font-size: 2em;
+      font-weight: 800;
+      text-align: center;
+      background-color: rgb(247, 239, 166);
+      color: red;
+      /* margin-bottom: 30px;
+      margin-left: auto; */
+      margin: 10px 10px 0 0;
+      /* padding-left: 20px;
+      padding-right: 20px; */
+      padding: 5px 10px;
+      display: block;
+    }
+    #headingspan a{
+      text-decoration: none;
+      color: #be0606;
+    }
+    #btnanchor{
+      margin-left: 1580px;
+      color: rgb(255, 0, 0);
+      background-color: rgb(3, 190, 247);
+      border: rgb(255, 255, 255);
+      border-radius: 50px;
+    }
+    #btnanchor a{
+      font-size: 15px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-decoration: none;
+    }
+    #bold{
+      color: rgb(27, 6, 212);
+      border:1px solid rgb(1, 67, 250);
+      border-radius: 4px;
+      padding: 5px;
+      margin: 5px;
+      font-size: 15px;
+    }
+    strong{
+      color: rgb(245, 4, 4);
+    }
+    /* Style the tab */
+    .tab {
+      width: 99%;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 2px solid rgb(150, 151, 151);
+      background-color: #ffffff;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border:none;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: rgb(160, 247, 167);
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: rgb(4, 247, 44);
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      background-color: #d1cef8;
+      display: none;
+      padding: 6px 12px;
+      border: 2px solid rgb(4, 7, 163);
+      border-top: none;
+      width: 99%;
+      border-radius: 15px;
+      font-size: 15px;
+    }
+/* css for team card */
+    /* Three columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      padding: 0 8px;
+    }
+
+    /* Display the columns below each other instead of side by side on small screens */
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    /* Add some shadows to create a card effect */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Some left and right padding inside the container */
+    .container {
+      padding: 0 16px;
+    }
+
+    /* Clear floats */
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      font-weight: 700;
+      color: rgb(189, 0, 0);
+    }
+
+
+    </style>
+
+    <!-- Slideshow script -->
+<script>
+    var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block"; 
+    dots[slideIndex-1].className += " active";
+  }  
+</script>
+
+<script>
+  function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+} 
+</script>
+</head>
+<body>
+    <header>
+        <h1 id="gotohome">WELCOME TO LIBRARY MANAGEMENT SYSTEM</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href=#>Home</a></li>
+                <li><a href=#para1>How to use</a></li>
+                <li><a href=#para2>Acknowledgement</a></li>
+                <li><a href=#para3>Thankyou Note</a></li>
+                <li><a href=#para4>About Developers</a></li>
+                <!-- <div class="search">
+                        <input type="text" name="search" id="search" placeholder="Search this website">
+                </div> -->
+            </ul>
+        </nav>
+    </header>
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 10</div>
+      <img src="img\LOGIN PAGE.png" style="width:100%">
+      <div class="text">Login Page</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 10</div>
+      <img src="img\ADD BOOK.png" style="width:100%">
+      <div class="text">Add BOOKS Detail</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 10</div>
+      <img src="img\ADD STUDENT.png" style="width:100%">
+      <div class="text">Add Students Detail</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 10</div>
+      <img src="img\ADD FACULTY DETAILS.png" style="width:100%">
+      <div class="text">Add Faculty Details</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 10</div>
+      <img src="img\ISSUE BOOKS.png" style="width:100%">
+      <div class="text">Issue Books</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">6 / 10</div>
+      <img src="img\RETURN BOOKS.png" style="width:100%">
+      <div class="text">Return Books</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">7 / 10</div>
+      <img src="img\UPDATE RECORDS.png" style="width:100%">
+      <div class="text">Update Records</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">8 / 10</div>
+      <img src="img\LIBRARY TIME TABLE.png" style="width:100%">
+      <div class="text">Library Time Table</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">9 / 10</div>
+      <img src="img\HELP.png" style="width:100%">
+      <div class="text">Help</div>
+    </div>
+
+
+    <div class="mySlides fade">
+      <div class="numbertext">10 / 10</div>
+      <img src="img\ABOUT LMS.png" style="width:100%">
+      <div class="text">About Library Management System</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span>    
+    <span class="dot" onclick="currentSlide(4)"></span>    
+    <span class="dot" onclick="currentSlide(5)"></span>    
+    <span class="dot" onclick="currentSlide(6)"></span>    
+    <span class="dot" onclick="currentSlide(7)"></span>    
+    <span class="dot" onclick="currentSlide(8)"></span>    
+    <span class="dot" onclick="currentSlide(9)"></span>    
+    <span class="dot" onclick="currentSlide(10)"></span>        
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="para1">
+<span id="headingspan"><a href="#gotohome">How to use</a></span>
+<p id="paragraph" style="text-align: justify; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 18px; font-weight: 500;">This Library Management System is software for monitoring and controlling the transection in a library. The project Library Management System is developed in MS Excel using VBA programming language, which mainly focuses on basic operations in a library of Motihari College of Engineering, Motihari. So, let’s start how to use this Library Management System efficiently. Click on the given tabs below and get it in details or 
+<a href="Documentation.pdf">Click here</a> to read pdf file. <br><br> Visit Dark mode Screenshots <a href="img\darkmode\DarkMode Feature in LMS.pdf">click here</a>.</p>
+<p></p>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'slide1')">Login</button>
+  <button class="tablinks" onclick="openCity(event, 'slide2')">Add Books Detail</button>
+  <button class="tablinks" onclick="openCity(event, 'slide3')">Add Student Details</button>
+  <button class="tablinks" onclick="openCity(event, 'slide4')">Add Faculty Details</button>
+  <button class="tablinks" onclick="openCity(event, 'slide5')">Issue Books</button>
+  <button class="tablinks" onclick="openCity(event, 'slide6')">Return Books</button>
+  <button class="tablinks" onclick="openCity(event, 'slide7')">Update Record</button>
+  <button class="tablinks" onclick="openCity(event, 'slide8')">Querry</button>
+  <button class="tablinks" onclick="openCity(event, 'slide9')">Library Time Table</button>
+  <button class="tablinks" onclick="openCity(event, 'slide10')">Get Help</button>
+  <button class="tablinks" onclick="openCity(event, 'slide11')">More...</button>
+
+
+</div>
+<!-- Tab content -->
+<div id="slide1" class="tabcontent">
+  <h3>Login</h3>
+  <p><strong>Step 1:</strong> Open Library_Management_System folder Double click on Library_Management_System.xlsm <br> <br><br>
+    <strong>Step2:</strong> Enter correct <strong style="color: green; font-size: 20px;">Username</strong> and <strong style="color: green; font-size: 20px;"> Password </strong> and click on Login or double press enter key.
+    </p>
+</div>
+
+<div id="slide2" class="tabcontent">
+  <h3>Add Books</h3>
+  <p> Click on <b id="bold"> ADD BOOK </b> tab or press <strong>Alt + B </strong>to open Book Entry Form. Fill the book details and click on <b id="bold">ADD RECORD</b> button or Press <strong>Alt + A </strong>.</p> 
+</div>
+
+<div id="slide3" class="tabcontent">
+  <h3>Add Students Detail</h3>
+  <p>Click on <b id="bold">ADD STUDENT RECORD</b> tab or press <strong> Alt + S</strong> to open Student Entry Form. Fill the book details and click on <b id="bold">ADD RECORD</b> button or Press <strong> Alt + A.</strong></p>
+</div>
+
+<div id="slide4" class="tabcontent">
+  <h3>Add Faculty Detail</h3>
+  <p>Click on <b id="bold">ADD FACULTY DETAILS</b> tab or press <strong>Alt + F</strong> to open Faculty Entry Form. Fill the book details and click on <b id="bold">ADD RECORD</b> button or Press <strong>Alt + A</strong>.</p>
+</div>
+
+<div id="slide5" class="tabcontent">
+  <h3>Issue Books</h3>
+  <p>Click on <b id="bold">ISSUE BOOK </b> or press <strong>Alt + I</strong> to open Book Issue Form. Fill the book details and click on <b id="bold">ISSUE BOOK</b> button.</p>
+</div>
+
+<div id="slide6" class="tabcontent">
+  <h3>Return Books</h3>
+  <p>Click on <b id="bold">RETURN BOOK </b>tab or press <strong>Alt + R</strong> to open Book Entry Form. Fill the book details and click on <b id="bold">RETURN BOOK</b> button.</p>
+</div>
+
+<div id="slide7" class="tabcontent">
+  <h3>Update Records</h3><br>
+  <p>• To<b id="bold"> UPDATE BOOK RECORD:</b>  Type <em>Book ID in BOOK ID textbox or in Book ID search box.</em> The Book details will autofill if record found. Modify the data and click on <strong>UPDATE. </strong><br><br><hr><br>
+    •	To<b id="bold"> UPDATE STUDENT RECORD:</b> Type <em>Ref. No.  in Ref. No. textbox or in Ref. No. search box.</em> The Faculty details will autofill if record found. Modify the data and click on <strong>UPDATE. </strong> <br><br><hr><br>
+    •	To <b id="bold">UPDATE FACULTY RECORD:</b> Type <em>Roll No. in Roll No. textbox or in Roll No. search box.</em> The Student details will autofill if record found. Modify the data and click on <strong>UPDATE. </strong> <br><br><hr><br>
+    </p>
+</div>
+
+<div id="slide8" class="tabcontent">
+  <h3>Querry</h3>
+  <p>Click on <b id="bold">QUERRY RECORD</b> tab or press <strong>Alt + Q</strong> to open QUERRY Form. <span style="color:red">(Not available now. We are still working on it.)</span></p>
+</div>
+<div id="slide9" class="tabcontent">
+  <h3>Library Rule</h3>
+  <p>Open <em>Library_Management_System</em> folder and open LibraryRule folder and REPLACE the Library Rule image as LibraryRule in .jpg format.<p style="color: red;"> Do not use .jpg while renaming image name. It’s an extension which is automatically included when we save a image in jpg format.</p> <br>
+    Follow this path to set Library Rule Image: <em style="color: rgb(15, 4, 165);"> D:\Library_Management_Sysytem\LibraryRule\LibraryRule.jpg</em>
+    </p>
+</div>
+<div id="slide10" class="tabcontent">
+  <h3>Help</h3>
+  <p>Click on <b id="bold">HELP</b> tab or press <strong>Alt + H</strong>. </p><hr>
+  SHORTCUT KEYS
+  <P><b id="bold">ADD RECORD</b> Press <strong>Alt + A</strong></P>
+  <p><b id="bold"> ADD BOOK RECORD </b> press <strong>Alt + B </strong></p>
+  <p><b id="bold">ADD STUDENT RECORD</b> press <strong> Alt + S</strong></p>
+  <p><b id="bold">ADD FACULTY RECORD</b> press <strong>Alt + F</strong></p>
+  <p><b id="bold">ISSUE BOOK </b> press <strong>Alt + I</strong></p>
+  <p><b id="bold">RETURN BOOK </b> press <strong>Alt + R</strong></p>
+  <p><b id="bold">QUERRY RECORD</b> press <strong>Alt + Q</strong></p>
+  <P><b id="bold">UPDATE RECORD</b> Press <strong>Alt + A</strong></P>
+  <P><b id="bold">LIBRARY RULE</b> Press <strong>Alt + L</strong></P>
+  <P><b id="bold">CLEAR / RESET FORM</b> Press <strong>Alt + C</strong></P>
+  <P><b id="bold">LOGOUT</b> Press <strong>Alt + O</strong></P>
+  <P><b id="bold">EXIT</b> Press <strong>Alt + E</strong></P>
+</div>
+</div>
+<div id="slide11" class="tabcontent">
+  <!-- <h3></h3> -->
+  <p>
+    To Save the data, click on <b id="bold">SAVE</b> button. <br><br><hr><br>
+    To Show the data in Excel Sheet, click on <b id="bold">SHOW DATA SHEET</b> button and to hide the sheet click on <b id="bold">HIDE DATA SHEET</b> button. <br><br><hr><br>
+    To logout from userform, click on <b id="bold">LOGOUT</b> button or Press <strong>Alt + O</strong> <br><br><hr><br>
+    To change the theme to Dark Mode, click on <b id="bold">Dark Mode</b> button  or for Light Mode, click on <b id="bold">Light Mode</b> button.<br><br><hr><br>
+    To close the program, click on <b id="bold">EXIT</b> button or Press <strong>Alt + E</strong>. All changes will saved at the time of closing program.
+  </p>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="para2"></div>
+<span id="headingspan"><a href="#gotohome">Acknowledgement</a></span>
+<p id="paragraph">
+To make any project, essential requirement is able guidance and reference without which project is incomplete. We are very much thankful to <b>Ms. Abha Kumari Ma’am</b> who has provided us an opportunity and motivation to gain knowledge through this type of project. we will get practical knowledge from this project and this will help us a lot in our career. 
+We are also thankful to <b>Mr. Satyajeet Kumar</b> whose co-operation contributed major part in our project. At last but not least, we are thankful to all our friends and other persons who have directly and indirectly helped us during planning and preparation of report.
+<br><br><br>
+<b>Thanking you!</b> <br><br>
+Krishn Kant Raj, Roll No. 17307 <br>
+Intekhab Ahmad, Roll No. 17302 <br>
+Vishal Kumar, Roll No. 17334 <br>
+Vikash Kumar, Roll No. 17327 <br>
+<br><br>
+B. Tech Sem VI, Computer Science & Engineering <br>
+Motihari College of Engineering, Motihari <br>
+AKU, Patna
+
+</p>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="para3">
+<span id="headingspan"><a href="#gotohome">Thank you!</a></span>
+<p id="parathanks">
+  Thank you very much for using our Library Management System. This Library Management System is desigend only for the Motihari College of Engineering. We thanks to <b>Ms. Abha Kumari Ma'am </b>to help us in this project. Without her support and guidlines it's difficult to complete in minimal time period. We hope this Library Management System will help you to easyily do the Library Transections. We need your feedback to improve it. Thnaks to  Vishal Kumar of 6th semester fot this idea to design a Library Management System to run our library smoothly. 
+  <p id="parathanks">To get any help or to give us feedback please e-mail us on <b>krishnkantraj@gmail.com</b>.</p><br><br>
+  <p id="paragraph">Thank you! <br><br>
+  Krishn Kant Raj, Roll No. 17307, Semester- 6<sup>th</sup> <br>
+  Intekhab Ahmad, Roll No. 17302, Semester- 6<sup>th</sup> <br>
+  Vishal Kumar, Roll No. 17334, Semester- 6<sup>th</sup> <br>
+  Vikash Kumar, Roll No. 17327, Semester- 6<sup>th</sup> <br>
+</p>
+
+</p>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</b>
+<div id="para4">
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="img\team\kkr.jpg" alt="Krishn Kant Raj" style="width:100%" height="10%">
+      <div class="container">
+        <h2>Krishn Kant Raj</h2>
+        <p class="title">Team Leader</p>
+        <p><b>College:</b> M.C.E, Motihari</p>
+        <p><b>Branch:</b> Computer Science and Engineering</p>
+        <p><b>Roll:</b> 17307</p>
+        <p>krishnkantraj@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="img\team\vishal.jpg" alt="Vishal Kumar" style="width:100%">
+      <div class="container">
+        <h2>Vishal Kumar</h2>
+        <p class="title">Team Member</p>
+        <p><b>College:</b> M.C.E, Motihari</p>
+        <p><b>Branch:</b> Computer Science and Engineering</p>
+        <p><b>Roll:</b> 17334</p>
+        <p>vishalkrsharma@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="img\team\vikash.jpg" alt="Vikash Kumar" style="width:100%">
+      <div class="container">
+        <h2>Vikash Kumar</h2>
+        <p class="title">Team Member</p>
+        <p><b>College:</b> M.C.E, Motihari</p>
+        <p><b>Branch:</b> Computer Science and Engineering</p>
+        <p><b>Roll:</b> 17327</p>
+        <p>vikashkumaryadav975@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="img\team\intekhab.jpg" alt="Intekhab Ahmad" style="width:100%">
+      <div class="container">
+        <h2>Intekhab Ahmad</h2>
+        <p class="title">Team Member</p>
+        <p><b>College:</b> M.C.E, Motihari</p>
+        <p><b>Branch:</b> Computer Science and Engineering</p>
+        <p><b>Roll:</b> 17302</p>
+        <p>intekhabahmad61@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <p><button id="btnanchor"><a href="#gotohome">Home</a></button></p>
+</div>
+</div>
+</body>
+</html>
