@@ -1,20 +1,20 @@
 *************************************************************** Library Management System ***************************************************************
 *							Motihari College of Engineering, Motihari							*
 *-------------------------------------------------------------------------------------------------------------------------------------------------------*
-*	  	 		This read me file contains the precess how to change the library rule in future						*
+*	  	 		This read me file contains the process how to change the library rule in future						*
 * 	   			Copyright @ Krishn Kant Raj CSE, 2K17, Motihari College of Engineering, Motihari					*
 *_______________________________________________________________________________________________________________________________________________________*
 
 Please follow the below instructions to set Library Rule image in userform. All steps are mendatory. Read carefully and follow the steps.
 
 Instructions:
-1. The Library rule image must be present at the following path "D:\Library_Management_Sysytem\LibraryRule" 
-2. Library Rule image must be with named LibraryRule in .jpg format.
-3. Do not use .jpg while renaming or while saving image.
-4. Size of image should be in ......px X ......px.
+1. The Library rule image must be present at the following path "E:\Library_Management_Sysytem\LibraryRule" 
+2. Library Rule image must be named with LibraryRule in .jpg format.
+3. Do not use extra .jpg while renaming or saving image. It's automatically added when you save an image in jpg format.
+4. Size of image should be in 46 cm X 26 cm (Width X Height) for perfect look.
 
 
-Error:
+Error: 
 If you are getting File not Found "76" error then please check the Library Rule image path and set it as per the above given instructions.
 
 
