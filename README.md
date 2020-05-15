@@ -4,7 +4,7 @@ This is a library management system project in Excel VBA.
 It's only for the Library of Motihari College of Enineering. 
 When you will download it's .zip file the folder name will be like "Library_Management_System-master".
 Do not forget to paste it in E:\ drive and rename the above mentioned folder name as "Library_Management_System". 
-Follow the path to execute it perfectly in your system "E:\Library_Management_Sysytem\Setup\Library Management System.xlsm". 
+Follow the path to execute it perfectly in your system "E:\Library_Management_System\Setup\Library Management System.xlsm". 
 if you are cloning this repositotry then you don't have need to rename the directry name. 
 It's mendatory to clone it in E:\ (E drive). If you are getting any error then please follow the above given path.
 You will get the full documentation in Doc folder. 
