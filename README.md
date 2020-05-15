@@ -18,26 +18,25 @@ After opening the excel file a login page will open.
 # Possiblity of Error
 - If Error '76' File not found then follow this path to solve this error "E:\Library_Management_Sysytem\LibraryRule\Read me.txt"
 - You will face the above error because of LibraryRule.jpg path is misplaced or not found. Follow the above path to solve it easily.
-# Login Details
 
-- Username: mce@lib<br>
+# Login Details
+- Username: mce@lib
 - Password: MCE@123
 
 The Query form is removed from userform and added to sheet named "Query_record" which is now not working properly.
 We are still working to improve it. 
 
 # Dark Mode Feature
-
 You can now enjoy the darkmode feature in Library Management System.
 A Toggle button is added on the top. When you will click on it the dashboard color will changed and Light Mode will be shown there.
 Click on Light mode to change the Dark Mode to Light Mode and vice versa.
 
 # Our Team
 
-- Krishn Kant Raj<br>
-- Vishal Kumar<br>
-- Vikash Kumar<br>
-- Intekhab Ahmad<br>
+- Krishn Kant Raj
+- Vishal Kumar
+- Vikash Kumar
+- Intekhab Ahmad
 
 Branch: CSE, Semester- 6th<br>
 Motihari College of Engineering, Motihari<br>

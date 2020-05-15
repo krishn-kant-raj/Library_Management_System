@@ -8,7 +8,7 @@
 Please follow the below instructions to set Library Rule image in userform. All steps are mendatory. Read carefully and follow the steps.
 
 Instructions:
-1. The Library rule image must be present at the following path "E:\Library_Management_Sysytem\LibraryRule" 
+1. The Library rule image must be present at the following path "E:\Library_Management_System\LibraryRule" 
 2. Library Rule image must be named with LibraryRule in .jpg format.
 3. Do not use extra .jpg while renaming or saving image. It's automatically added when you save an image in jpg format.
 4. Size of image should be in 46 cm X 26 cm (Width X Height) for perfect look.
