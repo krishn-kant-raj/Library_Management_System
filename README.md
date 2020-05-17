@@ -5,9 +5,9 @@ It's only for the Library of Motihari College of Enineering.
 When you will download it's .zip file the folder name will be like "Library_Management_System-master".
 Do not forget to paste it in E:\ drive and rename the above mentioned folder name as "Library_Management_System". 
 Follow the path to execute it perfectly in your system "E:\Library_Management_System\Setup\Library Management System.xlsm". 
-if you are cloning this repositotry then you don't have need to rename the directry name. 
-It's mendatory to clone it in E:\ (E drive). If you are getting any error then please follow the above given path.
-You will get the full documentation in Doc folder. 
+if you are cloning this repositotry then you don't have need to rename the directry. 
+It's mendatory to clone it in E:\ (E drive) or paste the cloned repository directry in E drive. If you are getting any error then please follow the above given path.
+You will get the full documentation in Doc Directory. 
 You can read the pdf or open html file for details. 
 Find Read me.txt file in LibraryRule folder to change Library Time Table image.
 You will get documentations in Doc folder. 
@@ -23,8 +23,10 @@ After opening the excel file a login page will open.
 - Username: mce@lib
 - Password: MCE@123
 
-The Query form is removed from userform and added to sheet named "Query_record" which is now not working properly.
-We are still working to improve it. 
+# Query Data
+The Query Records form is removed from userform and added to sheet named "Query_Data" which is now working properly.
+We have added a pivot table to get a quick view of Issue and Returned Books.
+You can see how to search a particular member's Issue and Return book records on Help tab.
 
 # Dark Mode Feature
 You can now enjoy the darkmode feature in Library Management System.
