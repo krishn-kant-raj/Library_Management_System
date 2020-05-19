@@ -6,6 +6,7 @@ When you will download it's **.zip** file the folder name will be like **_Librar
 Do not forget to paste it in E:\ drive and rename the above mentioned folder name as "Library_Management_System". 
 Follow the path to execute it perfectly in your system **_E:\Library_Management_System\Setup\Library Management System.xlsm_**. 
 ![Path Image](https://github.com/krishn-kant-raj/Library_Management_System/blob/master/Doc/img/PATH.png)
+
 if you are cloning this repositotry then you don't have need to rename the directry. Use the command given below to clone this repository.
 
 ```
