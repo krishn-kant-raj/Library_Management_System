@@ -56,7 +56,7 @@ Click on Light mode to change the Dark Mode to Light Mode and vice versa.
 - [x] Login panel for Student, Faculty and Admin staff
 - [ ] Improve query data form
 - [ ] Error handling 
-- [ ] Update screenshot in latest look 
+- [x] Update screenshot in latest look 
 
 # Our Team
 
