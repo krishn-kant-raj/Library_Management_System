@@ -1,5 +1,7 @@
 # Library Management System
 
+**The query_form branch is for tutorial point of view. I have created it to explain the overview of branching benifits to my colleagues**.
+
 This is a library management system project in Excel VBA. 
 It's only for the Library of Motihari College of Enineering. 
 When you will download it's **.zip** file the folder name will be like **_Library_Management_System-master_**.
